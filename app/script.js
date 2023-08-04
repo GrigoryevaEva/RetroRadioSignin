@@ -92,6 +92,6 @@ function checkNumInStr (str) {
 }
 
 function checkCapsInStr (str) {
-  let reg = /[A-Z]/;
+  let reg = /[A-ZА-Я]/;
   return Boolean(str.match(reg));
 }

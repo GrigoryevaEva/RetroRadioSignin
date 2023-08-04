@@ -1,32 +1,35 @@
 @import "nullification.scss";
-@import "style-changes.scss";
+@import 'mixins.scss';
+@import 'variables.scss';
 
 .container {
   height: 100vh;
   width: 100vw;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex (center, center);
 }
 
 .signin-form {
   height: 400px;
   width: 600px;
+  min-width: 600px;
+
+  position: relative;
 
   display: flex;
   flex-direction: column;
 
   border: 1px;
   border-style: solid;
-  border-color: rgb(74, 45, 7);
+  border-color: $border-color;
   border-radius: 100px 100px 35px 35px;
 
-  background-color: rgb(163, 112, 63);
-  box-shadow: 0px 10px 0px #888, inset 6px -10px 0px rgba(74, 45, 7, 0.678), inset -6px -10px 0px rgba(74, 45, 7, 0.678),
-    inset 0px 15px 0px rgb(220, 178, 135);
+  background-color: $background-color-main;
 
-  overflow: hidden;
+  box-shadow: 0px 10px 0px #888, 
+  inset 6px -10px 0px $shadow-color, 
+  inset -6px -10px 0px $shadow-color,
+  inset 0px 15px 0px $shadow-color-inset-default;
 
   &__main {
     height: 70%;
@@ -38,58 +41,52 @@
   &__input-area {
     width: 50%;
 
-    display: flex;
+    @include flex (space-around, default);
     flex-direction: column;
-    justify-content: space-around;
 
     padding: 40px 15px 40px 40px;
   }
 
   &__input {
     width: 85%;
-    height: 2.5em;
+    height: 34px;
 
     border-top: 1px;
     border-style: solid;
-    border-color: rgb(220, 178, 135);
-    border-radius: 1.3em;
+    border-color: $border-color-light;
+    border-radius: 20px;
 
-    background-color: rgb(130, 95, 51);
-    box-shadow: inset -2.3px 2.3px 0px rgba(74, 45, 7, 0.678), inset -2.3px -2.3px 0px rgba(74, 45, 7, 0.678),
-      inset 2.3px -2.3px 0px rgba(74, 45, 7, 0.678), inset 2.3px 2.3px 0px rgba(74, 45, 7, 0.678);
+    background-color: $background-color-input;
+
+    @include shadow-inset ($shadow-color);
 
     padding: 0px 10px 0px 10px;
 
     font-family: Caprasimo;
     font-weight: 400;
-    color: rgb(240, 211, 170);
+    color: $color-font;
 
     &::placeholder {
-      color: rgb(240, 211, 170);
+      color: $color-font;
     }
   }
 
   &__decor {
     width: 85%;
-    height: 2em;
+    height: 34px;
 
     border-top: 1px;
     border-style: solid;
-    border-color: rgb(220, 178, 135);
-    border-radius: 1.3em;
+    border-color: $border-color-light;
+    border-radius: 20px;
 
-    background-color: rgb(130, 95, 51);
-    box-shadow: inset -2.3px 2.3px 0px rgba(74, 45, 7, 0.678), inset -2.3px -2.3px 0px rgba(74, 45, 7, 0.678),
-      inset 2.3px -2.3px 0px rgba(74, 45, 7, 0.678), inset 2.3px 2.3px 0px rgba(74, 45, 7, 0.678);
+    background-color: $background-color-input;
+
+    @include shadow-inset ($shadow-color);
 
     margin-left: 15px;
 
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-
-    overflow: hidden;
+    @include flex (space-around, center);
 
     &-background {
       height: 7px;
@@ -104,42 +101,34 @@
   &__send-area {
     width: 50%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex (center, center);
 
     .button {
       height: 65%;
       width: 65%;
 
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex (center, center);
 
-      background-color: rgb(212, 197, 153);
+      background-color: $background-color-button;
 
       border: 1px;
       border-top-style: solid;
-      border-color: rgb(220, 178, 135);
+      border-color: $border-color-light;
       border-radius: 100%;
 
-      box-shadow: inset -2.5px 2.5px 0px rgba(74, 45, 7, 0.678), inset -2.5px -2.5px 0px rgba(74, 45, 7, 0.678),
-      inset 2.5px -2.5px 0px rgba(74, 45, 7, 0.678), 
-      inset 2.5px 2.5px 0px rgba(74, 45, 7, 0.678);
+      @include shadow-inset ($shadow-color);
 
       &__line-one {
         height: 90%;
         width: 90%;
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex (center, center);
 
         border-top: 1px;
         border-left: 1px;
         border-right: 1px;
         border-style: solid;
-        border-color: rgb(231, 82, 53);
+        border-color: $background-color-default;
         border-radius: 100%;
       }
 
@@ -147,15 +136,13 @@
         height: 85%;
         width: 85%;
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex (center, center);
 
         border-top: 1px;
         border-left: 1px;
         border-right: 1px;
         border-style: solid;
-        border-color: rgb(231, 82, 53);
+        border-color: $background-color-default;
         border-radius: 100%;
       }
 
@@ -163,11 +150,11 @@
         height: 75%;
         width: 75%;
 
-        background-color: rgb(231, 82, 53);
+        background-color: $background-color-default;
 
         border: 1px;
         border-style: solid;
-        border-color: rgb(74, 45, 7);
+        border-color: $border-color-dark;
         border-radius: 100%;
 
         box-shadow: 0 4px 0 rgba(74, 45, 7, 0.678),
@@ -182,9 +169,7 @@
     height: 30%;
     width: 100%;
 
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    @include flex (space-around, center);
 
     border: 4px;
     border-top-style: solid;
@@ -200,15 +185,13 @@
     height: 40px;
     width: 40px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex (center, center);
 
-    background-color: rgb(231, 82, 53);
+    background-color: $background-color-default;
 
     border: 1px;
     border-style: solid;
-    border-color: rgb(74, 45, 7);
+    border-color: $border-color-dark;
     border-radius: 100%;
 
     box-shadow: 0 4px 0 rgba(74, 45, 7, 0.678),
@@ -249,8 +232,63 @@
 .login-form-correct {
   background-color: rgb(133, 131, 38) !important;
 
-  background-color: 0 4px 0 rgba(74, 45, 7, 0.678),
+  box-shadow: 0 4px 0 rgba(74, 45, 7, 0.678),
     inset 0 3px 0 rgb(220, 197, 135) !important;
 
   transition: background-color 0.15s, box-shadow 0.15s;
+}
+
+.signin-form__antenna-body {
+  height: 80px;
+  width: 3px;
+
+  position: absolute;
+  top: -73px;
+  right: 60px;
+
+  background-color: rgb(74, 45, 7);
+
+  border-radius: 3px;
+}
+
+.signin-form__antenna-decor {
+  height: 3px;
+  width: 8px;
+
+  position: absolute;
+
+  background-color: rgb(74, 45, 7);
+
+  border-top: 1px;
+  border-style: solid;
+  border-color: rgb(220, 178, 135);
+  border-radius: 1px;
+
+  &_top {
+    top: 7px;
+    right: -2px;
+  }
+
+  &_bottom {
+    top: 13px;
+    right: -3px;
+  }
+}
+
+.signin-form__legs {
+  height: 10px;
+  width: 40px;
+
+  position: absolute;
+  bottom: -10px;
+
+  background-color: rgb(74, 45, 7);
+
+  &_right {
+    right: 50px;
+  }
+
+  &_left {
+    left: 50px;
+  }
 }

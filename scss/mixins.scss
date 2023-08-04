@@ -1,0 +1,17 @@
+@mixin flex ($jus-con, $ali-items) {
+  display: flex;
+  justify-content: $jus-con;
+  align-items: $ali-items;
+}
+
+@mixin shadow-inset ($shadow-color) {
+  box-shadow: inset -2.3px 2.3px 0px $shadow-color, 
+  inset -2.3px -2.3px 0px $shadow-color,
+  inset 2.3px -2.3px 0px $shadow-color, 
+  inset 2.3px 2.3px 0px $shadow-color;
+}
+
+@mixin border {
+  border: 1px;
+  border-style: solid;
+}
