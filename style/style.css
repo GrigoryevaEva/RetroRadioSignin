@@ -124,6 +124,11 @@ h1, h2, h3, h4, h5, h6 {
 .signin-form__input::placeholder {
   color: rgb(240, 211, 170);
 }
+.signin-form__input:-webkit-autofill, .signin-form__input:-webkit-autofill:hover, .signin-form__input:-webkit-autofill:focus, .signin-form__input:-webkit-autofill:active {
+  -webkit-transition: all 0s 5000s;
+  transition: all 0s 5000s;
+  -webkit-text-fill-color: rgb(240, 211, 170) !important;
+}
 .signin-form__decor {
   width: 85%;
   height: 34px;

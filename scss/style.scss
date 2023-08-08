@@ -26,7 +26,7 @@
 
   background-color: $background-color-main;
 
-  box-shadow: 0px 10px 0px #888, 
+  box-shadow: 0px 10px 0px $shadow-color-outside-global, 
   inset 6px -10px 0px $shadow-color, 
   inset -6px -10px 0px $shadow-color,
   inset 0px 15px 0px $shadow-color-inset-default;
@@ -69,6 +69,14 @@
     &::placeholder {
       color: $color-font;
     }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover, 
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      transition: all 0s 5000s;
+      -webkit-text-fill-color: $color-font !important;
+    }
   }
 
   &__decor {
@@ -94,7 +102,7 @@
 
       border-radius: 100%;
 
-      background-color: rgba(25, 13, 0, 0.76);
+      background-color: $background-color-decor;
     }
   }
 
@@ -157,8 +165,8 @@
         border-color: $border-color-dark;
         border-radius: 100%;
 
-        box-shadow: 0 4px 0 rgba(74, 45, 7, 0.678),
-        inset 0 3px 0 rgb(220, 178, 135);
+        box-shadow: 0 4px 0 $shadow-color,
+        inset 0 3px 0 $shadow-color-inset-default;
 
         transition: background-color 0.15s, box-shadow 0.15s;
       }
@@ -173,7 +181,7 @@
 
     border: 4px;
     border-top-style: solid;
-    border-color: rgb(117, 87, 49);
+    border-color: $border-color-hints_area;
     border-radius: 20px 20px 0px 0px;
 
     padding: 0 8px 0 8px;
@@ -194,8 +202,8 @@
     border-color: $border-color-dark;
     border-radius: 100%;
 
-    box-shadow: 0 4px 0 rgba(74, 45, 7, 0.678),
-    inset 0 3px 0 rgb(220, 178, 135);
+    box-shadow: 0 4px 0 $shadow-color,
+    inset 0 3px 0 $shadow-color-inset-default;
 
     pointer-events: none;
 
@@ -210,7 +218,7 @@
 
     font-family: Belanosima;
     font-weight: 700;
-    color: rgb(240, 211, 170);
+    color: $color-font;
 
     &-text {
       position: absolute;
@@ -230,10 +238,10 @@
 .num-password-correct,
 .caps-password-correct,
 .login-form-correct {
-  background-color: rgb(133, 131, 38) !important;
+  background-color: $background-color-correct !important;
 
-  box-shadow: 0 4px 0 rgba(74, 45, 7, 0.678),
-    inset 0 3px 0 rgb(220, 197, 135) !important;
+  box-shadow: 0 4px 0 $shadow-color,
+    inset 0 3px 0 $shadow-color-inset-correct !important;
 
   transition: background-color 0.15s, box-shadow 0.15s;
 }
@@ -246,7 +254,7 @@
   top: -73px;
   right: 60px;
 
-  background-color: rgb(74, 45, 7);
+  background-color: $background-color-antenna_legs;
 
   border-radius: 3px;
 }
@@ -257,11 +265,11 @@
 
   position: absolute;
 
-  background-color: rgb(74, 45, 7);
+  background-color: $background-color-antenna_legs;
 
   border-top: 1px;
   border-style: solid;
-  border-color: rgb(220, 178, 135);
+  border-color: $border-color-light;
   border-radius: 1px;
 
   &_top {
@@ -282,7 +290,7 @@
   position: absolute;
   bottom: -10px;
 
-  background-color: rgb(74, 45, 7);
+  background-color: $background-color-antenna_legs;
 
   &_right {
     right: 50px;
