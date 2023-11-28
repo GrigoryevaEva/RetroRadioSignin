@@ -1,4 +1,4 @@
-# Own project - SignIn form in Style Retro Radio
+# Own project - 
 
 Hi! I'm Eva.
 Thank you for deciding to familiarize yourself with my project.
